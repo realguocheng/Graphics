@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <title>Ray Tracing Report</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif
+        }
+    </style>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="page-header">
+					<h2>Report of Raytracer</h2>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="row">
+			<div class="col-md-12">
+				<div class="h3"><i>1.Two Light Models</i></div>
+				<p><img src="file_rt/formula.PNG" alt=""></p>
+			</div>
+			<div class="col-md-12">
+			<div class="h3"><i>2.Ray Tracing Algorithm</i></div>
+				<p><img src="file_rt/algorithm.PNG"> </p>
+			</div>
+		</div>
+
+		
+			<div class="row">
+				<div class="col-md-12">
+					<div class="h3"><i>3.Implementation Details</i></div>
+					<p>1).The ray direction emitted from your eyes should be set properly, otherwise the final image seem to be distorted. <code>(x/width, y/width, 1)</code>
+					<br> 2).When calculating the closest intersection point, we should pick the
+						minimum one between two possible results.<br>
+						<img src="file_rt/equation.PNG" alt=""><br>3).Don't forget to consider the shadow part, there are two ways:<br>
+						<img src="file_rt/shadow.PNG" alt=""><br> 4).Before calculating vector H in Blinn_Phong Model, L and V should
+						be normalized first.<br>
+						<br><br>
+					</p>
+						
+					<div class="h3"><i>4.Experimental Results</i></div>
+						<p><i><strong>1).Phong vs Blinn_Phong:</strong> </i>the highlights of Blinn_Phong looks larger than those of Phong,
+						&nbsp; &nbsp; however, the main difference is reflected in the overall effect - Blinn_Phong appears to be more <i>natural</i>.
+						Due to the color I set, it's not very obvious like <a href="https://en.wikipedia.org/wiki/Blinn%E2%80%93Phong_shading_model">wiki's</a></p>
+						<p><i><strong>2).Recurision depth:</strong> </i>
+						&nbsp; &nbsp;as the images dipicted, the reflection of the red sphere on the blue
+						sphere appears only when depth greater than 1.</p>
+						<p><i><strong>3).ka, kd, ks, n_shiny, rc:</strong> </i>
+						<ul>
+							<li>ka, ks and kd correspond to the intensity of ambient light, of specular light and of diffuse light respectively.</li>
+							<li>n_shiny and the size of highlghts are inversely proportional. </li>
+							<li>rc is a balance between the light intensity of reflected area and of the other area.</li>
+						</ul></p>
+						<p><i><strong>4).More lights:</strong> </i> More lights bring more highlghts and of course shiner spheres.</p>
+						<br>
+					<div class="h3"><i>5.Conclusion</i></div>
+					<p>This experiment is somewhat harder than the previous one. However the harder part is neither the light model nor the ray
+						tracing algorithm, it's the detail, because there are many details you'll never even notice while it's easy for us to figure 
+						out how the light model or the algorithm works. Some details has been mentioned at 'Implementation Details' and still there are many
+						of them not mentioned. Just like the words my teacher (@Baoquan Chen) said at last class, 'Evils are
+						in the Details', though not the same thing.
+					</p>
+					<br><br>
+				</div>
+			</div>
+	</div>
+
+</body>
+
+</html>

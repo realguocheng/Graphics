@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <title>Report of Stickman</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="page-header">
+					<h2>Report of Stickman</h2>
+				</div>
+			
+			<div class="h4"><i>1.Basic drawing</i></div>
+			<p>The stickman consists of 11 cuboids with different sizes and colors. The position of each cubiod is fixed
+                manually to make a man.</p>
+				
+			<div class="h4"><i>2.Translation and Rotation</i></div>
+			<p>Three.js has its own 'translate' and 'rotate' functions. What I do are, firstly, using the matrix stack
+                to do translation and rotation from leaf node to root node (the body structure can be recognized as
+                a tree where forearms and calives are the leaf nodes and the head is the root node.) secondly,
+                plusing every cubiod's x-position with one to do the body translation. </p>
+				
+			<div class="h4"><i>3.Animation</i></div>
+			<p>Animation is implemented by periodically rendering six different frames with a 200ms interval. Three
+                of six are related to left arm and right leg while the other three related to right arm and left leg.
+                To make the walking style like a real man, both the 1st frame and the 4th frame don't have a translation
+                on x-axis. If you have watched his walking, you can feel that change.</p>
+				
+			<div class="h4"><i>4.Operation</i></div>
+			<p>On that html page, I offered the view-change control and the 'start/stop/pause/next_state' control.
+				View-change is implemented by changing the position of camera and its 'lookAt' direction. State-control
+                is implemented by a boolean variable sent to the rendering function.
+                Example: you can see the top view by click the top-view button which won't have an effect on his
+                walking state, you can also click 'stop' button to see at this time what his posture is. 'next_state'
+                button helps you see all the frames while he is standing still.</p>
+				
+			<div class="h4"><i>5.Realtime Display</i></div>
+			<p>Realtime dispaly shows 3 different views. It actually uses the same scene and even the same render while
+                the main idea is changing the rendering area. That is to say, the render rendering the same scene at
+                three diferent areas on your screen at almost the same time.</p>
+				
+			<div class="h4"><i>6.Issues</i></div>
+			<p>I think the main problem is not familiar with three.js's API.And I learn most from the examples on the
+                Internet.</p>
+				
+			<div class="h4"><i>7.Conclusion</i></div>
+			<p>This assignment let us step in the world of computer graphics and also get some new impression on it. I think it's
+			a good start for me and others.</p>
+			<br><br>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
