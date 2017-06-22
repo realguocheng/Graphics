@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <title>Final Project</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="page-header">
+					<h2>Report of Final Project</h2>
+				</div>
+				
+				<h3><i>1.Instruction</i></h3>
+				<p>The final project is quite similar to the assignment3, both are all based on ray tracing. The difference is that the final
+				project aims at <strong>configuring parameters to meet OpenGl's result</strong>, more specificly, you should generate an image with the left half 
+				rendered by OpenGL and the right half by yourself and at the same time, the junction should be continuous enough. Sounds really difficult,
+				I try my best but am not sure whether I reach that.</p>
+				
+				<h3><i>2.Implementation</i></h3>
+				<p><strong><i>1) Image Composition</i></strong></p>
+				<p>I don't know how to render an image with left part by opengl while right part by my own implementation, so I take this way: using opengl to render 
+				a complete image, then I use matlab to render another complete image, finally compose the left of opengl's and the right of my.
+				<strong>BTW, composition is done by matlab, so accuracy is beyond doubt.</strong></p>
+				<p><strong><i>2) OpenGL</strong></i></p>
+				<p>OpenGL renders the scene by itself, all I did is setting the objects' color, position, and number and point lights' positions and some other parameters 
+				related to the light model, I will info these at 'Experimental Setup' part.</p>
+				<p><strong><i>3) My(MatLab)</strong></i></p>
+				<p>Comparing to OpengGL, I need to implement ray tracing to let objects visiable, about the theroy, you can see my 3rd assignment's report.
+				<a href="raytracer_report.html">click here</a></p>
+				<P>To see the complete implementation, you can download code at the demo page.<a href="fp.html"> click here</a></P> 
+				
+				<h3><i>3.Experimental Setup</i></h3>
+				<p>1) Image Size: 400*400</p>
+				<p>2) Objects: 7 'H2O' moleculars, the Oxygen atom is red<code>(1, 0, 0)</code> and radius 0.7, hydrogen atom is white<code>(1, 1, 1)</code> and radius 0.5.</p>
+				<p>3) Spheres' position matrix: </p>
+				<img src="file_fp/matrix.png">
+				<p>4) Camera postion: orign<code>(0, 0, 0)</code></p>
+				<p>5) View angle: first rotate spheres 40 degree by Y-axis then 30 degree by X-axis.</p>
+				<p>6) Light postion: <code>(-4, 4, -7)</code></p>
+				<p>7) Phong light model parameters: <code>Ka = Kd = Ks = 1, n_shiny = 24, rc = 0.3</code></p>
+				<p># You may notice the postions in cpp code and matlab code is different, due to the center symmetry, they
+				are actually the same.</p>
+				<p># To simulate the material, I did logarithmic transformation.</p>
+				
+				<h3><i>4.Experimental Results</i></h3>
+				<p>At your first sight, I am pretty sure you will not notice the difference between my and OpenGL's, even the composited image's left part and right part.
+				but once you watch these closely, you will find the discontinuity at the junction. There are two differences that are a bit obvious if you have watched the two complete
+				images, one is the shadow, the other is the size of light spot<strong>(in other words: color gradient)</strong>. The shadow on OpenGL's seems darker than my and the light spots on each sphere seem
+				larger than my. The root cause is obvious as I simulate material but don't actually use it.</p>
+				<p>Little difference at shadow and light spot(Left: OpenGL, Right: My)</p>
+				<img src="file_fp/opengl_shadow.png"> <img src="file_fp/my_shadow.png">
+				<p>Small discontinuity at junction</p>
+				<img src="file_fp/discontinuity.png">
+				<h3><i>5.Conclusion</i></h3>
+				<p>Configuring parameters is really a time-consuming work, especilly when there is a large amount.<br> Putting these aside, I'm really glad I have finished all computer
+				graphics projects and I learned a lot because I take all projects seriously, maybe I won't work on computer graphics in the future, but I do believe what I learned
+				can help me solve some other problems.</p>
+				<br><br>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
